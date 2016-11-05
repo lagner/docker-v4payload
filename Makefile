@@ -1,6 +1,6 @@
 
 IMG_HOST = lagner
-IMG_NAME = v4payload
+IMG_NAME = docker-v4payload
 IMG_TAG = latest
 IMG = $(IMG_HOST)/$(IMG_NAME):$(IMG_TAG)
 
