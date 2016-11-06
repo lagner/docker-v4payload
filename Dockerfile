@@ -2,21 +2,13 @@ FROM lagner/docker-basement
 
 USER root
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
  "^libxcb.*-dev"\
- bison\
- build-essential\
- ccache\
  *cryptopp*\
- default-jdk\
- fabric\
+ build-essential g++-5 gcc-5 cpp-5 gdb ccache\
+ gcc-multilib lib32z1 lib32stdc++6 lib32ncurses5\
+ flex bison\
  binutils\
- flex\
- g++-5\
- gcc-5\
- cpp-5\
- gdb\
  git\
  gperf\
  icu-devtools\
@@ -50,7 +42,6 @@ RUN apt-get install -y \
  meld\
  mesa-common-dev\
  ninja-build\
- openjdk-*-jre\
  openjdk-8*\
  openssl\
  python\
@@ -59,8 +50,7 @@ RUN apt-get install -y \
  python-pip\
  python3\
  python3-pip\
- ruby\
- gcc-multilib lib32z1 lib32stdc++6 lib32ncurses5
+ fabric
 
 RUN update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.gold" 20
 RUN dpkg --add-architecture i386
