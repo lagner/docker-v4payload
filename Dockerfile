@@ -50,7 +50,8 @@ RUN apt-get update && apt-get install -y \
  python-pip\
  python3\
  python3-pip\
- fabric
+ fabric\
+ zip
 
 RUN update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.gold" 20
 RUN dpkg --add-architecture i386
